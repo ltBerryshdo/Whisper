@@ -1,0 +1,15 @@
+{
+    "id": "whisper",
+    "version": "1.0",
+    "name": "Whisper",
+    "description": {
+        "en_us": "Check the player's IP to prevent impersonation of logging into the offline server",
+        "zh_cn": "检测玩家IP以防止冒名登陆离线服务器"
+    },
+    "author": "ltBerryshdo",
+    "link": "https://github.com/ltBerryshdo/the_offline_ops",
+    "dependencies": {
+        "mcdreforged": ">=2.6.0"
+    },
+    "resources": ["lang"]
+}

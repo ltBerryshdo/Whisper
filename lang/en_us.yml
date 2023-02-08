@@ -1,0 +1,4 @@
+whisper:
+  help_message: 测试
+  cmd:
+    help: 帮助
