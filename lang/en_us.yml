@@ -1,4 +1,18 @@
 whisper:
-  help_message: 测试
+  help_message: Send some private message to others at same time.
   cmd:
-    help: 帮助
+    help: |
+      ----------WHISPER COMMANDS----------
+      !!whisper => Display this message
+      !!whisper <player> => Add target players to receive private message(Multiple parameters are acceptable)
+      !!whisper list => Display all the player in the list
+      !!whisper clear => Delete the list
+      !!whisper delmum <player> => Delete player(Multiple parameters are acceptable)
+  error:
+    playerNotInGroups: You didn't add any players as whispered listeners!
+  info:
+    add: {} Added successfully
+    del: {} Deleted successfully
+    del_group: The group has been emptied
+    whisper: {} whispered to you：
+    group: ----------THE MEMBERS----------

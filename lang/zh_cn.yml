@@ -1,4 +1,18 @@
 whisper:
-  help_message: 测试
+  help_message: 同时对一群人说悄悄话
   cmd:
-    help: 帮助
+    help: |
+      ----------Whisper 命令----------
+      !!whisper 显示此提示
+      !!whisper <player> 添加玩家作为悄悄话的倾听者(可接受多个参数)
+      !!whisper list 列出列表中所有的玩家
+      !!whisper clear 删除列表和玩家
+      !!whisper delmum <player> 删除玩家(可接受多个参数)
+  error:
+    playerNotInGroups: 你没有添加任何玩家作为悄悄话的倾听者！
+  info:
+    add: {}添加成功
+    del: {}删除成功
+    del_group: 小组已清空
+    whisper: {}悄悄对你说：
+    group: ----------小组成员如下----------

@@ -3,11 +3,11 @@
     "version": "1.0",
     "name": "Whisper",
     "description": {
-        "en_us": "Check the player's IP to prevent impersonation of logging into the offline server",
-        "zh_cn": "检测玩家IP以防止冒名登陆离线服务器"
+        "en_us": "Send some private message to others at same time in easier way.",
+        "zh_cn": "更便捷地对一群人同时说悄悄话"
     },
     "author": "ltBerryshdo",
-    "link": "https://github.com/ltBerryshdo/the_offline_ops",
+    "link": "https://github.com/ltBerryshdo/Whisper",
     "dependencies": {
         "mcdreforged": ">=2.6.0"
     },
