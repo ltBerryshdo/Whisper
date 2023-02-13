@@ -2,17 +2,19 @@ whisper:
   help_message: Send some private message to others at same time.
   cmd:
     help: |
-      ----------WHISPER COMMANDS----------
-      !!whisper => Display this message
+      §3----------WHISPER COMMANDS----------§r
+      §7!!whisper => Display this message
       !!whisper <player> => Add target players to receive private message(Multiple parameters are acceptable)
       !!whisper list => Display all the player in the list
       !!whisper clear => Delete the list
-      !!whisper delmum <player> => Delete player(Multiple parameters are acceptable)
+      !!whisper delmum <player> => Delete player(Multiple parameters are acceptable)§r
+      Default whisper trigger character: §c§o{}§r
   error:
     playerNotInGroups: You didn't add any players as whispered listeners!
   info:
-    add: {} Added successfully
-    del: {} Deleted successfully
+    add: "{} Added successfully"
+    del: "{} Deleted successfully"
     del_group: The group has been emptied
-    whisper: {} whispered to you：
+    whisper: "{} whispered to you："
     group: ----------THE MEMBERS----------
+    copy: Now you can receive and send private message in {}'s group.
