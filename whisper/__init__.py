@@ -5,6 +5,7 @@ import json
 
 Groups = {}         #{'lightberryshdo': {'lightberryshdo', 'myfriend', 'theotherplayer'}}, The players can receive your msg.
 Trigger = '**'      #trigger strings
+ItemName = 'MCDRwhisper'
 
 def on_load(server: PluginServerInterface, prev_module):
     global Groups
@@ -34,17 +35,12 @@ def on_load(server: PluginServerInterface, prev_module):
     cmdTree.register(server)
 
 def on_user_info(server: PluginServerInterface, info: Info):
-    global Groups
-    global Trigger
-    if info.content.startswith(Trigger):
+    if info.content == Trigger:
         info.cancel_send_to_server()
         '''if info.player not in Groups[info.player]:
             server.reply(info, RText(translate(server, 'whisper.error.playerNotInGroups'), RColor.red))
             return'''
-        msg = RText(translate(server, 'whisper.info.whisper', RText(info.player, RColor.green)), RColor.gold) + info.content[len(Trigger):]
-        for i in range(len(Groups[info.player])):
-            player = list(Groups[info.player])
-            server.tell(player[i], msg)
+        send_msg(server, info.player)
 
 def on_unload(server: PluginServerInterface):
     with open(os.path.join(server.get_data_folder(), 'save.json'), 'w', encoding='utf-8') as saveFl:
@@ -54,6 +50,34 @@ def on_unload(server: PluginServerInterface):
             Groups[keys[i]] = groups
         save = {'save': Groups, 'trigger': Trigger}
         json.dump(save, saveFl, ensure_ascii=False, indent=4)
+
+@new_thread('getCharInBook')
+def send_msg(server: PluginServerInterface, player: str):
+    api = server.get_plugin_instance('minecraft_data_api')
+
+    slot_numbers = [0, 1, 2, 3, 4, 5, 6, 7, 8] #https://minecraft.fandom.com/zh/wiki/Player.dat%E6%A0%BC%E5%BC%8F?file=Items_slot_number.png
+    slot: int
+    for i in slot_numbers:
+        data_path = 'Inventory['+ str(i) +'].id'
+        item_id = api.get_player_info(player, data_path)
+        if item_id == 'minecraft:writable_book':
+            data_path = 'Inventory['+ str(i) +'].tag.display.Name'
+            item_name_raw = api.get_player_info(player, data_path)
+            item_name = api.convert_minecraft_json(item_name_raw)
+            if (item_name != None) and (item_name['text'] == ItemName):
+                slot = i
+                break
+    
+    if slot != None:
+        data_path = 'Inventory['+ str(slot) +'].tag.pages'
+        message = api.get_player_info(player, data_path)
+
+        msg = RText(translate(server, 'whisper.info.whisper', RText(player, RColor.green)), RColor.gold) + str(message[0])
+        for i in range(len(Groups[player])):
+            players = list(Groups[player])
+            server.tell(players[i], msg)
+        
+        #clear data_path = 'data get entity lightberryshdo Inventory[0].tag.pages'
 
 
 def translate(server: PluginServerInterface, key: str, *args, **kwargs) -> RTextMCDRTranslation:

@@ -9,7 +9,8 @@
     "author": "ltBerryshdo",
     "link": "https://github.com/ltBerryshdo/Whisper",
     "dependencies": {
-        "mcdreforged": ">=2.6.0"
+        "mcdreforged": ">=2.6.0",
+        "minecraft_data_api": "*"
     },
     "resources": ["lang"]
 }
