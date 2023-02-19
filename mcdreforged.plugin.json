@@ -3,8 +3,8 @@
     "version": "1.0",
     "name": "Whisper",
     "description": {
-        "en_us": "Send some private message to others at same time in easier way.",
-        "zh_cn": "更便捷地对一群人同时说悄悄话"
+        "en_us": "Send some private message to others in a faster way.",
+        "zh_cn": "更快速地对一群人说悄悄话"
     },
     "author": "ltBerryshdo",
     "link": "https://github.com/ltBerryshdo/Whisper",

@@ -3,7 +3,7 @@ from mcdreforged.api.all import *
 import os
 import json
 
-Groups = {}         #{'lightberryshdo': {'lightberryshdo', 'myfriend', 'theotherplayer'}}, The players can receive your msg.
+Groups = {}         #{'lightberryshdo': {'lightberryshdo', 'myfriend', 'otherplayer'}}, The players can receive your message.
 Trigger = '**'      #trigger strings
 ItemName = 'MCDRwhisper'
 
@@ -23,11 +23,11 @@ def on_load(server: PluginServerInterface, prev_module):
     cmdTree = SimpleCommandBuilder()
 
     cmdTree.command('!!whisper', lambda src: src.reply(translate(server, 'whisper.cmd.help', Trigger)))
-    cmdTree.command('!!whisper <player>', lambda src, ctx: add_player(server, getPlayerName(src.is_player, src.player), ctx['player']))
-    cmdTree.command('!!whisper list', lambda src: list_group(server, getPlayerName(src.is_player, src.player)))
-    cmdTree.command('!!whisper clear', lambda src: del_group(server, getPlayerName(src.is_player, src.player)))
-    cmdTree.command('!!whisper delmum <player>', lambda src, ctx: del_player(server, getPlayerName(src.is_player, src.player), ctx['player']))
-    cmdTree.command('!!whisper cp <name>', lambda src, ctx: copy(server, getPlayerName(src.is_player, src.player), ctx['name']))
+    cmdTree.command('!!whisper <player>', lambda src, ctx: add_player(server, getPlayerName(src), ctx['player']))
+    cmdTree.command('!!whisper list', lambda src: list_group(server, getPlayerName(src)))
+    cmdTree.command('!!whisper clear', lambda src: del_group(server, getPlayerName(src)))
+    cmdTree.command('!!whisper delmum <player>', lambda src, ctx: del_player(server, getPlayerName(src), ctx['player']))
+    cmdTree.command('!!whisper cp <name>', lambda src, ctx: copy(server, getPlayerName(src), ctx['name']))
 
     cmdTree.arg('name', Text)
     cmdTree.arg('player', GreedyText)
@@ -83,9 +83,9 @@ def send_msg(server: PluginServerInterface, player: str):
 def translate(server: PluginServerInterface, key: str, *args, **kwargs) -> RTextMCDRTranslation:
     return server.rtr(key, *args, **kwargs)
 
-def getPlayerName(player: bool, playerName: str) -> str:
-    if player:
-        return playerName
+def getPlayerName(source: CommandSource) -> str:
+    if isinstance(source, PlayerCommandSource):
+        return source.player
 
 
 def add_player(server: PluginServerInterface, player: str, names: str):
