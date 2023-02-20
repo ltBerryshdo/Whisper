@@ -1,5 +1,5 @@
 # Whisper
-## [中文](./README.md)<br>
+[中文](./README.md)<br>
 A **[MCDReforged](https://github.com/Fallen-Breath/MCDReforged) plugin**<br>
 More plugins click *[here](https://github.com/MCDReforged/PluginCatalogue)*
 
@@ -8,10 +8,18 @@ More plugins click *[here](https://github.com/MCDReforged/PluginCatalogue)*
 ## Description
 Send some private message to others at same time in easier way.<br>
 Use triggers (default<strong>'**'</strong>) to send private messages to everyone the player specifies.
+## How to use
+1. Use `!!whisper <player>` command add player(s) can receive private message
+2. Prepare a writable_book and rename it to "MCDRwhisper" and place it in the hotbar
+3. Write your whispered words in writable_book~, be careful not to break lines
+4. Then enter the default trigger ** in the chat bar
+5. They should be able to hear from you~
+6. Before whispering the next time, remember to empty the contents of the writable_book ~~（I originally wanted to clear it automatically, but I won't use /data command）~~
+7. Just that, you can avoid using commands such as /tell to send messages to different people one by one
 ## Attention
-- 发送的消息请储存在快捷栏里名为 <strong>“ MCDRwhisper ”</strong> 的书与笔中。
-- 确保待发送的消息没有 <strong>换行符</strong>
-- 在发送下一条消息前，请先 <strong>清空</strong> 书与笔的内容
+- The message to be sent needs to be written in a writable_book called <strong>"MCDRwhisper"</strong> in the hotbar
+- Make sure there is no <strong>LINE BREAKS</strong> in the message to be sent
+- Before whispering the next time, remember to <strong>EMPTY</strong> the contents of the writable_book
 ## Dependencies
 |Plugin ID|Requirement|
 |-------|-------|

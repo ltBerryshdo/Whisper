@@ -7,8 +7,10 @@ whisper:
       !!whisper <player> 添加玩家作为悄悄话的倾听者(可接受多个参数)
       !!whisper list 列出列表中所有的玩家
       !!whisper clear 删除列表和玩家
-      !!whisper delmum <player> 删除玩家(可接受多个参数)§r
+      !!whisper delmum <player> 删除玩家(可接受多个参数)
+      !!whisper cp <name> 把另一个玩家的通讯录复制过来§r
       默认悄悄话触发字符： §c§o{}§r
+      默认识别指定书与笔的名字：§g§nMCDRwhisper§r
   error:
     playerNotInGroups: 你没有添加任何玩家作为悄悄话的倾听者！
   info:

@@ -9,6 +9,14 @@ More plugins click *[here](https://github.com/MCDReforged/PluginCatalogue)*
 ## 简介
 更便捷地对一群人同时说悄悄话<br>
 使用触发器（默认为  <strong>'**'</strong>  ），向玩家指定的所有人发送私密信息。
+## 如何使用
+1. 使用`!!whisper <player>`命令添加能收到悄悄话的玩家（们）
+2. 准备一本 书与笔 并且重命名为 “MCDRwhisper”，将其放在快捷栏中
+3. 在书与笔中写下你的悄悄话~，注意不要换行
+4. 然后在公共聊天栏输入触发器，默认为 **
+5. TA们应该就能收到你的来信了~
+6. 在下一次说悄悄话前，记得清空书与笔里的内容 ~~（本来想自动清除的，结果不会用/data命令）~~
+7. 就酱，可以不用/tell等命令一条条给不同的人发消息了
 ## 注意
 - 发送的消息请储存在快捷栏里名为 <strong>“ MCDRwhisper ”</strong> 的书与笔中。
 - 确保待发送的消息没有 <strong>换行符</strong>
