@@ -8,6 +8,7 @@ More plugins click *[here](https://github.com/MCDReforged/PluginCatalogue)*
 [![Github stars](https://img.shields.io/github/stars/ltBerryshdo/Whisper)]()
 ## 简介
 更便捷地对一群人同时说悄悄话<br>
+大声密谋（bushi)<br>
 使用触发器（默认为  <strong>'**'</strong>  ），向玩家指定的所有人发送私密信息。
 ## 如何使用
 1. 使用`!!whisper <player>`命令添加能收到悄悄话的玩家（们）
